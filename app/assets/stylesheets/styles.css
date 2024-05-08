@@ -1,4 +1,4 @@
-/* Stylesheet for Homepage*/
+/* Stylesheet for Homepage */
 body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
@@ -11,7 +11,6 @@ body {
     color: #333;
     line-height: 1.6;
 }
-
 
 main {
     padding: 20px;
@@ -43,9 +42,7 @@ main {
 }
 
 nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    background-color: #fff; /* Set background color for the navbar */
     padding: 10px 20px; /* Adjust as needed */
 }
 
@@ -59,7 +56,7 @@ nav {
 }
 
 .logo {
-    /* Optionally add styles for logo container */
+    margin-left: auto; /* Push the logo to the right */
 }
 
 ul {
