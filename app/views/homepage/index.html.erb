@@ -11,6 +11,11 @@
     <header>
         <h1>Welcome to SBZ Fitness </h1>
         <nav>
+        <div class="logo">
+            <%= link_to root_path do %>
+                <%= image_tag "logo.png", alt: "SBZ Fitness Logo" %>
+            <% end %>
+        </div>
             <ul>
                 <li><%= link_to "Home", root_path %></li>
                 <li><%= link_to "Plans", workouts_path %></li>
