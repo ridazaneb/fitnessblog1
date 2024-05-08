@@ -39,6 +39,30 @@
             </div>
         </div>
     </nav>
+<main>
+        <section class="hero">
+            <h2>Your Fitness Journey Starts Here</h2>
+            <p>Track your workouts, set goals, and stay motivated!</p>
+            <%= link_to "Get Started", signup_path, class: "btn" %>
+        </section>
+        <section class="features">
+            <h2>Key Features</h2>
+            <ul>
+                <li>
+                    <%= image_tag "exercise_hp.jpeg", alt: "Workouts Icon" %>
+                    Workouts
+                </li>
+                <li>
+                    <%= image_tag "plans_hp.jpeg", alt: "Workouts Icon" %>
+                    Goals
+                </li>
+                <li>
+                    <%= image_tag "nutrition_hp.jpeg", alt: "Workouts Icon" %>
+                    Nutrition 
+                </li>
+            </ul>
+        </section>
+    </main>
 
     <!-- Bootstrap JS (Optional) -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
