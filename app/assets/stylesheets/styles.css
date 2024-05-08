@@ -44,22 +44,17 @@ main {
 nav {
     background-color: #fff; /* Set background color for the navbar */
     padding: 10px 20px; /* Adjust as needed */
-    display: grid; /* Use CSS grid */
-    grid-template-columns: auto 1fr; /* First column auto width for logo, second column takes remaining space */
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Distribute items horizontally */
     align-items: center; /* Center items vertically */
 }
-/*
-.brand {
-    display: flex;
-    align-items: center;
-} */
 
 .header-text {
     margin-left: 20px; /* Adjust spacing between text and logo */
 }
 
 .logo {
-    margin-right: 50%; /* Adjust spacing between logo and text */
+    margin-right: 20px; /* Adjust spacing between logo and text */
 }
 
 ul {
