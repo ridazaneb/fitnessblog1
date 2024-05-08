@@ -54,8 +54,9 @@ nav {
     align-items: center;
 }
 
-.header-text {
-    /* Remove margin-left */
+.header-text h1 {
+    display: inline-block; /* Change display to inline-block */
+    vertical-align: middle; /* Optionally, align the text vertically with the logo */
 }
 
 .logo {
