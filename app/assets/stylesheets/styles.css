@@ -64,3 +64,10 @@ main {
     padding: 10px;
     text-align: center;
 }
+.logo {
+    float: right;
+}
+
+.header-text {
+    float: left;
+}
