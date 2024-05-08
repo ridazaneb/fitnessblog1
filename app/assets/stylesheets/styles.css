@@ -44,8 +44,8 @@ main {
 nav {
     background-color: #fff; /* Set background color for the navbar */
     padding: 10px 20px; /* Adjust as needed */
-    display: flex; /* Use flexbox */
-    justify-content: space-between; /* Space items evenly */
+    display: grid; /* Use CSS grid */
+    grid-template-columns: auto 1fr; /* First column auto width for logo, second column takes remaining space */
     align-items: center; /* Center items vertically */
 }
 
