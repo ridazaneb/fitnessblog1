@@ -8,13 +8,13 @@
     <%= stylesheet_link_tag 'styles', media: 'all', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
-    <header>
-        <h1>Welcome to SBZ Fitness </h1>
-        <nav>
-        <div class="logo">
+   <div class="logo">
             <%= link_to root_path do %>
                 <%= image_tag "logo.png", alt: "SBZ Fitness Logo" %>
             <% end %>
+        </div>
+        <div class="header-text">
+            <h1>SBZ Fitness </h1>
         </div>
             <ul>
                 <li><%= link_to "Home", root_path %></li>
