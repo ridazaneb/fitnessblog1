@@ -44,23 +44,27 @@ main {
 nav {
     background-color: #fff; /* Set background color for the navbar */
     padding: 10px 20px; /* Adjust as needed */
-    display: flex; /* Use flexbox */
+    display: inline-block;
     justify-content: space-between; /* Distribute items horizontally */
     align-items: center; /* Center items vertically */
 }
 
-.brand {
+/*.brand {
     display: flex;
     align-items: center;
-}
+}*/
 
 .logo {
-    margin-right: 200px; /* Adjust spacing between logo and text */
+    display: inline-block;
+    vertical-align: top;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    margin-top: 15px;  
 }
 
 .header-text {
-    display: flex;
-    flex-direction: column; /* Display the text in a column */
+    display: inline-block;
 }
 ul {
     list-style-type: none;
