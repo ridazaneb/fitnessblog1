@@ -54,15 +54,14 @@ nav {
     align-items: center;
 }
 
-.header-text h1 {
-    display: inline-block; /* Change display to inline-block */
-    vertical-align: middle; /* Optionally, align the text vertically with the logo */
-}
-
 .logo {
     margin-right: 10px; /* Adjust spacing between logo and text */
 }
 
+.header-text {
+    display: flex;
+    flex-direction: column; /* Display the text in a column */
+}
 ul {
     list-style-type: none;
     margin: 0;
