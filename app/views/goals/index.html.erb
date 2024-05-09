@@ -1,20 +1,23 @@
+<!-- goals/index.html.erb -->
+<section class="generic-goals">
+  <h2>Generic Fitness Goals</h2>
+  <ol>
+    <li>Lose Weight</li>
+    <li>Build Muscle</li>
+    <li>Improve Flexibility</li>
+  </ol>
+</section>
 <% if current_user %>
-  <!-- Render user's goals -->
-  <% @goals.each do |goal| %>
+  <!-- Form to add new goal -->
+  <%= form_with(model: Goal.new, url: goals_path, method: :post) do |form| %>
     <div>
-      <h3><%= goal.name %></h3>
-      <p><%= goal.description %></p>
-      <p><strong>Start Date:</strong> <%= goal.start_date %></p>
-      <p><strong>End Date:</strong> <%= goal.end_date %></p>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
     </div>
-  <% end %>
-<%= link_to "Add New Goal", new_goal_path %>
-<% else %>
-  <!-- Render potential goals -->
-  <% @potential_goals.each do |goal| %>
     <div>
-      <h3><%= goal.name %></h3>
-      <p><%= goal.description %></p>
+      <%= form.label :description %>
+      <%= form.text_area :description %>
     </div>
+    <%= form.submit "Add Goal" %>
   <% end %>
 <% end %>
