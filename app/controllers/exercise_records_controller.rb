@@ -6,7 +6,7 @@ class ExerciseRecordsController < ApplicationController
   end
 
   def create
-    @exercise_record = User.find_by(username: current_user.username).exercise_records.build(exercise_record_params)
+    @exercise_record = current_user.exercise_records.build(exercise_record_params)
     @exercise_record.exercise_id = params[:exercise_id]  # Assign the exercise_id from the form params
 
     if @exercise_record.save
@@ -19,6 +19,6 @@ class ExerciseRecordsController < ApplicationController
   private
 
   def exercise_record_params
-    params.require(:exercise_record).permit(:exercise_id, :username, :time, :speed, :calories) 
+    params.require(:exercise_record).permit(:exercise_id, :time, :speed, :calories) 
   end
 end
