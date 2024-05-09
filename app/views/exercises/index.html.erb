@@ -45,9 +45,7 @@
         <div class="exercise">
             <h2><%= exercise.name %></h2>
             <div class="exercise-details">
-                <div class="detail">Time</div>
-                <div class="detail">Speed</div>
-                <div class="detail">Calories</div>
+                
             </div>
             <%= form_for ExerciseRecord.new, url: exercise_records_path do |f| %>
                 <%= f.hidden_field :exercise_id, value: exercise.id %>
