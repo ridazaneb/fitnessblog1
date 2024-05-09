@@ -1,7 +1,11 @@
 class PlansController < ApplicationController
   def index
-    @plan = current_user.plan
-end
+    if current_user
+      @plan = current_user.plan
+    else
+      @plan = []
+    end
+  end
   
   def new
     @plan = Plan.new
