@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
   end
-end
+
   def create
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
@@ -12,3 +12,4 @@ end
       render :new
     end
   end
+end
