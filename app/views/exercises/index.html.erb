@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitness App</title>
     <%= stylesheet_link_tag 'styles', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <!-- Bootstrap CSS -->
-    <!--<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">-->
-    
-
 </head>
 <body>
     <nav class="navbar navbar-expand-lg">
@@ -42,50 +38,49 @@
         </div>
     </nav>
 
+    <h1>Exercises</h1>
 
-<h1>Exercises</h1>
-
-<% @exercises.each do |exercise| %>
-  <div class="exercise">
-    <h2><%= exercise.name %></h2>
-    <div class="exercise-details">
-      <div class="detail">Time</div>
-      <div class="detail">Speed</div>
-      <div class="detail">Calories</div>
-    </div>
-    <%= form_for ExerciseRecord.new, url: exercise_records_path do |f| %>
-      <%= f.hidden_field :exercise_id, value: exercise.id %>
-      <div class="exercise-inputs">
-        <%= f.number_field :time, placeholder: "Time (minutes)" %>
-        <%= f.number_field :speed, placeholder: "Speed (mph)" %>
-        <%= f.number_field :calories, placeholder: "Calories" %>
-      </div>
-      <%= f.submit "Add Record", class: "btn btn-primary" %>
+    <% @exercises.each do |exercise| %>
+        <div class="exercise">
+            <h2><%= exercise.name %></h2>
+            <div class="exercise-details">
+                <div class="detail">Time</div>
+                <div class="detail">Speed</div>
+                <div class="detail">Calories</div>
+            </div>
+            <%= form_for ExerciseRecord.new, url: exercise_records_path do |f| %>
+                <%= f.hidden_field :exercise_id, value: exercise.id %>
+                <div class="exercise-inputs">
+                    <%= f.number_field :time, placeholder: "Time (minutes)" %>
+                    <%= f.number_field :speed, placeholder: "Speed (mph)" %>
+                    <%= f.number_field :calories, placeholder: "Calories" %>
+                </div>
+                <%= f.submit "Add Record", class: "btn btn-primary" %>
+            <% end %>
+        </div>
     <% end %>
-  </div>
 
-<% if current_user %>
-<table>
-  <thead>
-    <tr>
-      <th>Exercise</th>
-      <th>Time</th>
-      <th>Speed</th>
-      <th>Calories</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @exercise_records.each do |record| %>
-      <tr>
-        <td><%= record.exercise.name %></td>
-        <td><%= record.time %></td>
-        <td><%= record.speed %></td>
-        <td><%= record.calories %></td>
-      </tr>
+    <% if current_user %>
+        <table>
+            <thead>
+                <tr>
+                    <th>Exercise</th>
+                    <th>Time</th>
+                    <th>Speed</th>
+                    <th>Calories</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @exercise_records.each do |record| %>
+                    <tr>
+                        <td><%= record.exercise.name %></td>
+                        <td><%= record.time %></td>
+                        <td><%= record.speed %></td>
+                        <td><%= record.calories %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
     <% end %>
-  </tbody>
-</table>
-< %end %>
-<% end %>
 </body>
 </html>
