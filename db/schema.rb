@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_09_123236) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_09_130533) do
+  create_table "goals", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.date "start_date"
+    t.date "end_date"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_goals_on_user_id"
+  end
+
   create_table "reviews", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.text "body"
@@ -26,5 +37,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_09_123236) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "goals", "users"
   add_foreign_key "reviews", "users"
 end
