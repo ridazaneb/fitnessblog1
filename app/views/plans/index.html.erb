@@ -37,7 +37,7 @@
             </div>
         </div>
     </nav>
-
+<div style="background-color: #f0f0f0; padding: 20px;">
     <h1 style="text-align: center;">Goals</h1>
     <br>
     <br>
@@ -55,7 +55,6 @@
         <h2 style="color: #333; padding-left: 30px; font-size:25px;">Existing Plans</h2>
     <% end %>
     <br>
-    <br>
     <ul style="list-style-type: disc; color: #333; padding-left: 30px">
         <% @plans.each do |plan| %>
             <li><%= plan.title %>: <%= plan.description %></li>
@@ -65,5 +64,6 @@
     <% if current_user %>
         <%= link_to "Add Your Own Goal", new_plan_path, class: "btn btn-primary", style: "color: #fff; background-color: #007bff; border-color: #007bff; padding-left: 30px" %>
     <% end %>
+</div>
 </body>
 </html>
