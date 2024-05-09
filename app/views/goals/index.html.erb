@@ -8,6 +8,7 @@
       <p><strong>End Date:</strong> <%= goal.end_date %></p>
     </div>
   <% end %>
+<%= link_to "Add New Goal", new_goal_path %>
 <% else %>
   <!-- Render potential goals -->
   <% @potential_goals.each do |goal| %>
