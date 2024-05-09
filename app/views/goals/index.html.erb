@@ -54,7 +54,7 @@
 </section>
 <% if current_user %>
   <!-- Form to add new goal -->
-  <%= form_with(model: Goal.new, url: plans_plath, method: :post) do |form| %>
+  <%= form_with(model: Goal.new, url: plans_path, method: :post) do |form| %>
     <div>
       <%= form.label :name %>
       <%= form.text_field :name %>
