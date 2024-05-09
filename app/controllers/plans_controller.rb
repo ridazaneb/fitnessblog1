@@ -28,6 +28,6 @@ class PlansController < ApplicationController
   private
 
   def plan_params
-    params.require(:plan).permit(:title, :description) # Add more fields as needed
+    params.require(:plan).permit(:title, :description) 
   end
 end
