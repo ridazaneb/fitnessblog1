@@ -14,4 +14,7 @@ class GoalsController < ApplicationController
       ]
     end
   end
+  def new
+    @goal = Goal.new
+  end
 end
