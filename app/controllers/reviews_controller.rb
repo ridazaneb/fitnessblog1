@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
-  before_action :set_review, only: [:edit, :update, :destroy]
+ /* before_action :authenticate_user!, only: [:new, :create] */
+ /* before_action :set_review, only: [:edit, :update, :destroy] */
 
   def new
     @review = Review.new
