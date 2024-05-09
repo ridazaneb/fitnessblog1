@@ -7,7 +7,7 @@ class ExerciseRecordsController < ApplicationController
 
   def create
     @exercise_record = current_user.exercise_records.build(exercise_record_params)
-    @exercise_record.exercise_id = params[:exercise_id]  # Assign the exercise_id from the form params
+    @exercise_record.exercise_id = params[:exercise_record][:exercise_id]  # Assign the exercise_id from the form params
 
     if @exercise_record.save
       redirect_to exercises_path, notice: 'Exercise record was successfully created.'
