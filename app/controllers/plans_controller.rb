@@ -1,9 +1,9 @@
 class PlansController < ApplicationController
-  def index
+ def index
     if current_user
-      @plan = current_user.plan
+      @plans = current_user.plans
     else
-      @plan = []
+      @plans = [] # Set @plans to an empty array if there is no logged-in user
     end
   end
   
