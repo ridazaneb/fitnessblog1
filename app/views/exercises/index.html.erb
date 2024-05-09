@@ -18,4 +18,26 @@
       <%= f.submit "Add Record", class: "btn btn-primary" %>
     <% end %>
   </div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Exercise</th>
+      <th>Time</th>
+      <th>Speed</th>
+      <th>Calories</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @exercise_records.each do |record| %>
+      <tr>
+        <td><%= record.exercise.name %></td>
+        <td><%= record.time %></td>
+        <td><%= record.speed %></td>
+        <td><%= record.calories %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <% end %>
