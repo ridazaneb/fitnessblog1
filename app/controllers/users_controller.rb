@@ -4,12 +4,12 @@ class UsersController < ApplicationController
   end
 
   def create
-     @user = User.new(user_params)
+      @user = User.new(user_params)
     if @user.save
-      redirect_to root_path, notice: "Sign up successful!"
+      redirect_to login_path, notice: "Sign up successful! Please log in."
     else
-      render :ne
-  end
+      render :new
+    end
 end
 
  private
