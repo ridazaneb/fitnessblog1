@@ -3,84 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness App</title>
-    <%= stylesheet_link_tag 'styles', media: 'all', 'data-turbolinks-track': 'reload' %>
-     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.1"></script>
-
+    <title>SBZ Fitness</title>
+    <link rel="stylesheet" href="/assets/styles-108386f2a37c78568425efb5d27bfd3d439d297f4fdedae828f582733a988091.css" media="all" data-turbolinks-track="reload" />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.1"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg" style=" color: #000000;">
         <div class="container">
-            <%= link_to root_path, class: "navbar-brand" do %>
-                <%= image_tag "logo.png", alt: "SBZ Fitness Logo", class: "logo" %>
+            <a class="navbar-brand" href="/">
+                <img alt="SBZ Fitness Logo" class="logo" src="/assets/logo-c3d32b9502d90c8116417df0ebd42541f52e57842a9755444f69c3728b9be269.png" />
                 SBZ Fitness
-            <% end %>
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <%= link_to "Home", root_path, class: "nav-link", style: "color: #000000;" %>
+                        <a class="nav-link" style="color: #000000;" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <%= link_to "Plans", plans_path, class: "nav-link", style: "color: #000000;" %>
+                        <a class="nav-link" style="color: #000000;" href="/plans">Plans</a>
                     </li>
                     <li class="nav-item">
-                        <%= link_to "Exercises", exercises_path, class: "nav-link", style: "color: #000000;" %>
+                        <a class="nav-link" style="color: #000000;" href="/exercises">Exercises</a>
                     </li>
                     <li class="nav-item">
-                        <%= link_to "Log In", login_path, class: "nav-link", style: "color: #000000;" %>
+                        <a class="nav-link" style="color: #000000;" href="/login">Log In</a>
                     </li>
                     <li class="nav-item">
-                        <%= link_to "Sign Up", signup_path, class: "nav-link", style: "color: #000000;" %>
+                        <a class="nav-link" style="color: #000000;" href="/signup">Sign Up</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-<div style="background-color: #B0E0E6; padding: 20px;">
-    <h1 style="text-align: center;">Goals</h1>
-    <br>
-    <br>
-    <h2 style="color: #333; padding-left: 20px;">Suggested Goals</h2>
-    <br>
-    <ul style="list-style-type: circle; color: #333; padding-left: 30px;">
-        <li>Goal 1: Lose 10 pounds in 2 months</li>
-        <li>Goal 2: Run a 5k race</li>
-        <li>Goal 3: Increase muscle mass by weight training</li>
-    </ul>
 
-    <% if current_user %>
+    <div style="background-color: #B0E0E6; padding: 20px;">
+        <h1 style="text-align: center;">Goals</h1>
+        <br>
+        <br>
+        <h2 style="color: #333; padding-left: 20px;">Suggested Goals</h2>
+        <br>
+        <ul style="list-style-type: circle; color: #333; padding-left: 30px;">
+            <li>Goal 1: Lose 10 pounds in 2 months</li>
+            <li>Goal 2: Run a 5k race</li>
+            <li>Goal 3: Increase muscle mass by weight training</li>
+        </ul>
+
         <br>
         <br>
         <h2 style="color: #333; padding-left: 30px; font-size:25px;">Existing Plans</h2>
-    <% end %>
-    <br>
-    <ul style="list-style-type: disc; color: #333; padding-left: 30px">
-        <% @plans.each do |plan| %>
-            <li><%= plan.title %>: <%= plan.description %></li>
-        <% end %>
-    </ul>
+        <br>
+        <ul style="list-style-type: disc; color: #333; padding-left: 30px">
+            <li>Increase Endurance: Keep training!</li>
+            <li>Work: Harder</li>
+            <li>Do Yoga: Yoga in the morning</li>
+            <li>: </li>
+        </ul>
 
-    <% if current_user %>
-        <%= link_to "Add Your Own Goal", new_plan_path, class: "btn btn-primary", style: "color: #fff; background-color: #007bff; border-color: #007bff; padding-left: 30px" %>
-    <% end %>
-    <% if flash[:success] %>
-            <!-- Container for confetti effect -->
-            <div id="confetti-container" style="position: relative; height: 300px;"></div>
-        <% end %>
-</div>
- <script>
+        <a class="btn btn-primary" style="color: #fff; background-color: #007bff; border-color: #007bff; padding-left: 30px" href="/plans/new">Add Your Own Goal</a>
+        
+        <!-- Container for confetti effect -->
+        <div id="confetti-container" style="position: relative; height: 300px;"></div>
+    </div>
+
+    <!-- JavaScript to trigger confetti effect -->
+    <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Check if the confetti container exists
-            var confettiContainer = document.getElementById("confetti-container");
-            if (confettiContainer) {
-                // Start confetti effect
-                var confettiSettings = { target: 'confetti-container' };
-                var confetti = new ConfettiGenerator(confettiSettings);
-                confetti.render();
-            }
+            // Start confetti effect
+            var confettiSettings = { target: 'confetti-container' };
+            var confetti = new ConfettiGenerator(confettiSettings);
+            confetti.render();
         });
     </script>
 </body>
