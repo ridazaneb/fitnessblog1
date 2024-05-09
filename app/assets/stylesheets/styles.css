@@ -1,4 +1,4 @@
-/* Stylesheet for Homepage */
+/* Reset default margins and paddings */
 body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
@@ -41,45 +41,39 @@ main {
     text-align: center;
 }
 
+/* Navbar customization */
+.navbar {
+    background-color: #000000;
+}
 
+.navbar .navbar-nav .nav-link {
+    color: #C70039;
+}
 
-/*.brand {
-    display: flex;
-    align-items: center;
-}*/
+.navbar .navbar-brand {
+    font-size: 24px;
+    color: #FFFFFF;
+}
 
+.navbar-toggler-icon {
+    background-color: #C70039; /* Color for the toggler icon */
+}
+
+/* Branding */
 .logo {
     display: inline-block;
     vertical-align: top;
     width: 50px;
     height: 50px;
     margin-right: 20px;
-    margin-top: 15px;  
+    margin-top: 15px;
 }
 
 .header-text {
     display: inline-block;
 }
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
 
-ul li {
+ul.navbar-nav li.nav-item {
     display: inline;
     margin-right: 20px; 
-}
-.navbar-custom {
-  background-color: #000000;
-}
-
-
-.navbar-custom .navbar-nav .nav-link {
-  color: #C70039 ;
-}
-
-.navbar-custom .navbar-brand {
-  font-size: 24px;
-  color: #FFFFFF;
 }
