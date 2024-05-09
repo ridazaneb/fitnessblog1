@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :workouts
   resources :exercises
   get '/login', to: 'sessions#new'  
-  get 'signup', to: 'registrations#new'   
+  post '/signup', to: 'users#create'
 
   # Defines the root path route ("/")
   # root "posts#index"
