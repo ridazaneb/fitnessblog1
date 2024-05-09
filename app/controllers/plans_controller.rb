@@ -15,7 +15,8 @@ class PlansController < ApplicationController
     @plan = current_user.plans.build(plan_params)
 
     if @plan.save
-      redirect_to plans_path, notice: 'Plan was successfully created.'
+      flash[:success] = "Goal set successfully!"
+      redirect_to plans_path
     else
       render :new
     end
