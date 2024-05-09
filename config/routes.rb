@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'plans/new'
+  get 'plans/create'
   get 'users/new'
   get 'users/create'
   get 'sessions/new'
