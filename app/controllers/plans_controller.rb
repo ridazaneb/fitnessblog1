@@ -4,12 +4,17 @@ class PlansController < ApplicationController
   end
 
   def create
-    @plan = Plan.new(plan_params)
+    @plan = current_user.plans.build(plan_params)
+
     if @plan.save
       redirect_to root_path, notice: 'Plan was successfully created.'
     else
       render :new
     end
+  end
+
+  def set_plan
+    @plan = Plan.find(params[:id])
   end
 
   private
