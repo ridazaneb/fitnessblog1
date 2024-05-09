@@ -6,6 +6,7 @@ class ExerciseRecordsController < ApplicationController
   end
 
   def create
+    puts "Params: #{params.inspect}"
     @exercise_record = current_user.exercise_records.build(exercise_record_params)
     @exercise_record.exercise_id = params[:exercise_record][:exercise_id]  # Assign the exercise_id from the form params
 
