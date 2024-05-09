@@ -74,5 +74,18 @@ ul {
 
 ul li {
     display: inline;
-    margin-right: 20px; /* Adjust spacing between list items */
+    margin-right: 20px; 
+}
+.navbar-custom {
+  background-color: #000000;
+}
+
+
+.navbar-custom .navbar-nav .nav-link {
+  color: #C70039 ;
+}
+
+.navbar-custom .navbar-brand {
+  font-size: 24px;
+  color: #FFFFFF;
 }
