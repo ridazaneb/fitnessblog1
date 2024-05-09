@@ -1,0 +1,15 @@
+<h1>Goals</h1>
+
+<!-- Display pre-defined goals -->
+<h2>Pre-defined Goals</h2>
+<ul>
+  <li>Goal 1: Lose 10 pounds in 2 months</li>
+  <li>Goal 2: Run a 5k race</li>
+  <li>Goal 3: Increase muscle mass by weight training</li>
+  <!-- Add more pre-defined goals as needed -->
+</ul>
+
+<!-- Link/button to navigate to the page for adding new goals -->
+<% if current_user %>
+  <%= link_to "Add Your Own Goal", new_plan_path, class: "btn btn-primary" %>
+<% end %>
