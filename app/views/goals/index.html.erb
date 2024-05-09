@@ -1,6 +1,19 @@
-<!-- app/views/goals/index.html.erb -->
 <% if current_user %>
-  <!-- Render the form to edit goals -->
+  <!-- Render user's goals -->
+  <% @goals.each do |goal| %>
+    <div>
+      <h3><%= goal.name %></h3>
+      <p><%= goal.description %></p>
+      <p><strong>Start Date:</strong> <%= goal.start_date %></p>
+      <p><strong>End Date:</strong> <%= goal.end_date %></p>
+    </div>
+  <% end %>
 <% else %>
-  <!-- Render the list of potential goals -->
+  <!-- Render potential goals -->
+  <% @potential_goals.each do |goal| %>
+    <div>
+      <h3><%= goal.name %></h3>
+      <p><%= goal.description %></p>
+    </div>
+  <% end %>
 <% end %>
