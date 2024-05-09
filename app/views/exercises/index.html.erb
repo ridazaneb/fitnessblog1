@@ -61,7 +61,7 @@
 
     <% if current_user %>
         <br>
-        <div style="background-color: #f0f0f0; padding: 20px;">
+         <div style="background-color: #f0f0f0; padding: 20px;">
         <h1 style="color: #333; text-align: center;">Exercise Records</h1>
         <table>
             <thead>
@@ -75,10 +75,10 @@
             <tbody>
                 <% @exercise_records.each do |record| %>
                     <tr>
-                        <td><%= record.exercise.name %></td>
-                        <td><%= record.time %></td>
-                        <td><%= record.speed %></td>
-                        <td><%= record.calories %></td>
+                        <td style="border: 1px solid #dddddd; padding: 8px;"><%= record.exercise.name %></td>
+                        <td style="border: 1px solid #dddddd; padding: 8px;"><%= record.time %></td>
+                        <td style="border: 1px solid #dddddd; padding: 8px;"><%= record.speed %></td>
+                        <td style="border: 1px solid #dddddd; padding: 8px;"><%= record.calories %></td>
                     </tr>
                 <% end %>
             </tbody>
