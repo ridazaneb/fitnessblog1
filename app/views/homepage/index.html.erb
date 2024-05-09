@@ -64,6 +64,15 @@
                 </li>
             </ul>
         </section>
+        <section class="reviews">
+  <h2>Recent Reviews</h2>
+  <% @reviews.each do |review| %>
+    <div class="review">
+      <p><%= review.body %></p>
+      <p><strong>Posted by:</strong> <%= review.user.username %></p>
+    </div>
+  <% end %>
+</section>
     </main>
 
     <!-- Bootstrap JS (Optional) -->
