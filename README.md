@@ -1,25 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a fitness web application constructed using Ruby on Rails. It's features include:
 
-Things you may want to cover:
 
-* Ruby version
+* User login/signup
 
-* System dependencies
+* Goal planning 
 
-* Configuration
+* Exercise Tracking
 
-* Database creation
+* User exercise records 
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # fitnessblog1
