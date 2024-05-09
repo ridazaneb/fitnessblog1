@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :workouts
   resources :exercises
   get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
 
