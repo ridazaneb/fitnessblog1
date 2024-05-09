@@ -41,7 +41,9 @@ main {
     text-align: center;
 }
 
-/* Navbar customization */
+.container{
+    background-color: #lightblue
+}
 .navbar {
     background-color: #000000;
 }
