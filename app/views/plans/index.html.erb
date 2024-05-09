@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitness App</title>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'styles', media: 'all', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg" style="background-color: #333; color: #fff;">
         <div class="container">
             <%= link_to root_path, class: "navbar-brand" do %>
                 <%= image_tag "logo.png", alt: "SBZ Fitness Logo", class: "logo" %>
@@ -19,48 +19,47 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <%= link_to "Home", root_path, class: "nav-link" %>
+                        <%= link_to "Home", root_path, class: "nav-link", style: "color: #fff;" %>
                     </li>
                     <li class="nav-item">
-                        <%= link_to "Plans", plans_path, class: "nav-link" %>
+                        <%= link_to "Plans", plans_path, class: "nav-link", style: "color: #fff;" %>
                     </li>
                     <li class="nav-item">
-                        <%= link_to "Exercises", exercises_path, class: "nav-link" %>
+                        <%= link_to "Exercises", exercises_path, class: "nav-link", style: "color: #fff;" %>
                     </li>
                     <li class="nav-item">
-                        <%= link_to "Log In", login_path, class: "nav-link" %>
+                        <%= link_to "Log In", login_path, class: "nav-link", style: "color: #fff;" %>
                     </li>
                     <li class="nav-item">
-                        <%= link_to "Sign Up", signup_path, class: "nav-link" %>
+                        <%= link_to "Sign Up", signup_path, class: "nav-link", style: "color: #fff;" %>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <h1 style="color: #333; text-align: center;">Goals</h1>
+    <br>
+    <br>
+    <h2 style="color: #333;">Suggested Goals</h2>
+    <br>
+    <ul style="list-style-type: circle; color: #333;">
+        <li>Goal 1: Lose 10 pounds in 2 months</li>
+        <li>Goal 2: Run a 5k race</li>
+        <li>Goal 3: Increase muscle mass by weight training</li>
+    </ul>
 
+    <% if current_user %>
+        <h2 style="color: #333;">Existing Plans</h2>
+    <% end %>
+    <ul style="list-style-type: disc; color: #333;">
+        <% @plans.each do |plan| %>
+            <li><%= plan.title %>: <%= plan.description %></li>
+        <% end %>
+    </ul>
 
-<h1>Goals</h1>
-<br>
-<br>
-<h2>Suggested Goals</h2>
-<br>
-<ul>
-  <li>Goal 1: Lose 10 pounds in 2 months</li>
-  <li>Goal 2: Run a 5k race</li>
-  <li>Goal 3: Increase muscle mass by weight training</li>
-</ul>
-<% if current_user %>
-  <h2>Existing Plans</h2>
-<% end %>
-<ul>
-  <% @plans.each do |plan| %>
-    <li><%= plan.title %>: <%= plan.description %></li>
-  <% end %>
-</ul>
-<!-- Link/button to navigate to the page for adding new goals -->
-<% if current_user %>
-  <%= link_to "Add Your Own Goal", new_plan_path, class: "btn btn-primary" %>
-<% end %>
+    <% if current_user %>
+        <%= link_to "Add Your Own Goal", new_plan_path, class: "btn btn-primary", style: "color: #fff; background-color: #007bff; border-color: #007bff;" %>
+    <% end %>
 </body>
 </html>
