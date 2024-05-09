@@ -8,7 +8,12 @@
   <li>Goal 3: Increase muscle mass by weight training</li>
   <!-- Add more pre-defined goals as needed -->
 </ul>
-
+<h2>Existing Plans</h2>
+<ul>
+  <% @plans.each do |plan| %>
+    <li><%= plan.title %>: <%= plan.description %></li>
+  <% end %>
+</ul>
 <!-- Link/button to navigate to the page for adding new goals -->
 <% if current_user %>
   <%= link_to "Add Your Own Goal", new_plan_path, class: "btn btn-primary" %>
