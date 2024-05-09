@@ -7,3 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+Exercise.create(name: "Running")
+Exercise.create(name: "Swimming")
+Exercise.create(name: "Lifting")
+Exercise.create(name: "Biking")
