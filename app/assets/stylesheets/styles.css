@@ -21,6 +21,8 @@ main {
 .hero {
     text-align: center;
     margin-bottom: 40px;
+    background-color: #7AD07E;
+
 }
 
 .features {
