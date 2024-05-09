@@ -53,18 +53,8 @@
   </ol>
 </section>
 <% if current_user %>
-  <!-- Form to add new goal -->
-  <%= form_with(model: Goal.new, url: plans_path, method: :post) do |form| %>
-    <div>
-      <%= form.label :name %>
-      <%= form.text_field :name %>
-    </div>
-    <div>
-      <%= form.label :description %>
-      <%= form.text_area :description %>
-    </div>
-    <%= form.submit "Add Goal" %>
-  <% end %>
+     <%= link_to "Add a goal", new_plans_path %>
+
 <% end %>
 
 </body>
