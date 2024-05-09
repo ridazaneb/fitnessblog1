@@ -1,4 +1,8 @@
-<%= form_with(model: goal, local: true) do |form| %>
+
+
+<h1>Add New Goal</h1>
+
+<%= form_with(model: @goal, local: true) do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>
 
@@ -11,5 +15,6 @@
   <%= form.label :end_date %>
   <%= form.date_field :end_date %>
 
-  <%= form.submit %>
+
+  <%= form.submit "Create Goal" %>
 <% end %>
