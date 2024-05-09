@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitness App</title>
     <%= stylesheet_link_tag 'styles', media: 'all', 'data-turbolinks-track': 'reload' %>
-     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.1"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.1"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg" style=" color: #000000;">
@@ -40,33 +39,52 @@
         </div>
     </nav>
 
-<h1>New Plan</h1>
-<br>
-<%= form_with(model: @plan, url: plans_path) do |form| %>
-  <% if @plan.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
-      <ul>
-      <% @plan.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <h1>New Plan</h1>
+    <br>
+    <%= form_with(model: @plan, url: plans_path) do |form| %>
+        <% if @plan.errors.any? %>
+            <div id="error_explanation">
+                <h2><%= pluralize(@plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
+                <ul>
+                    <% @plan.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-<br>
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
+        <div class="field">
+            <%= form.label :title %>
+            <%= form.text_field :title %>
+        </div>
+        <br>
+        <div class="field">
+            <%= form.label :description %>
+            <%= form.text_area :description %>
+        </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+        <div class="actions">
+            <%= form.submit %>
+        </div>
+    <% end %>
+
+    <!-- JavaScript to trigger confetti effect -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Listen for form submission
+            document.querySelector("form").addEventListener("submit", function(event) {
+                // Prevent default form submission
+                event.preventDefault();
+
+                // Trigger confetti effect
+                var confettiSettings = { target: 'confetti-container' };
+                var confetti = new ConfettiGenerator(confettiSettings);
+                confetti.render();
+                
+                // Submit the form
+                this.submit();
+            });
+        });
+    </script>
 </body>
 </html>
