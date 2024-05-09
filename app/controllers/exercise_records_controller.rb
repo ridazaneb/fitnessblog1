@@ -6,7 +6,7 @@ class ExerciseRecordsController < ApplicationController
   end
 
   def create
-    @exercise_record = current_user.exercise_records.build(exercise_record_params)
+    @exercise_record = User.find_by(username: current_user.username).exercise_records.build(exercise_record_params)
 
     if @exercise_record.save
       redirect_to exercises_path, notice: 'Exercise record was successfully created.'
