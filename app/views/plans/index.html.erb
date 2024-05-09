@@ -8,7 +8,9 @@
   <li>Goal 3: Increase muscle mass by weight training</li>
   <!-- Add more pre-defined goals as needed -->
 </ul>
-<h2>Existing Plans</h2>
+<% if current_user %>
+  <h2>Existing Plans</h2>
+<% end %>
 <ul>
   <% @plans.each do |plan| %>
     <li><%= plan.title %>: <%= plan.description %></li>
