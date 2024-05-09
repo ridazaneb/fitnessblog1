@@ -9,7 +9,8 @@ Rails.application.routes.draw do
 
   # Define routes for resources
   resources :workouts
-  resources :exercises
+  resources :exercises, only: [:index]
+  resources :exercise_records, only: [:new, :create]
   resources :plans
 
   # Define routes for reviews
