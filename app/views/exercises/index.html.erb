@@ -38,8 +38,9 @@
         </div>
     </nav>
 
+<div style="background-color: #B0E0E6; padding: 20px;">
     <h1>Exercises</h1>
-
+    <br>
     <% @exercises.each do |exercise| %>
         <div class="exercise">
             <h2><%= exercise.name %></h2>
@@ -61,6 +62,7 @@
     <% end %>
 
     <% if current_user %>
+        <br>
         <table>
             <thead>
                 <tr>
@@ -82,5 +84,6 @@
             </tbody>
         </table>
     <% end %>
+</div>
 </body>
 </html>
