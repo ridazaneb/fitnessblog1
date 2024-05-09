@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   resources :workouts
   resources :exercises
+  resources :plans
+
   resources :reviews, only: [:new, :create]
 
   get '/login', to: 'sessions#new'
