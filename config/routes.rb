@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   get '/plans', to: 'goals#index', as: 'plans'
-
+  resources :goals, only: [:index, :new, :create]
   # Defines the root path route ("/")
   # root "posts#index"
 end
