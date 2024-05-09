@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitness App</title>
     <%= stylesheet_link_tag 'styles', media: 'all', 'data-turbolinks-track': 'reload' %>
+     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.1"></script>
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg" style=" color: #000000;">
@@ -64,6 +66,22 @@
     <% if current_user %>
         <%= link_to "Add Your Own Goal", new_plan_path, class: "btn btn-primary", style: "color: #fff; background-color: #007bff; border-color: #007bff; padding-left: 30px" %>
     <% end %>
+    <% if flash[:success] %>
+            <!-- Container for confetti effect -->
+            <div id="confetti-container" style="position: relative; height: 300px;"></div>
+        <% end %>
 </div>
+ <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Check if the confetti container exists
+            var confettiContainer = document.getElementById("confetti-container");
+            if (confettiContainer) {
+                // Start confetti effect
+                var confettiSettings = { target: 'confetti-container' };
+                var confetti = new ConfettiGenerator(confettiSettings);
+                confetti.render();
+            }
+        });
+    </script>
 </body>
 </html>
