@@ -18,11 +18,14 @@ Rails.application.routes.draw do
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
-
+  delete '/logout', to: 'sessions#destroy'
+  
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
-  delete '/logout', to: 'sessions#destroy'
+  
 
+  get '/plans/new', to: 'plans#new'
+  post '/plans', to: 'plans#create'
 
   # Defines the root path route ("/")
   # root "posts#index"
