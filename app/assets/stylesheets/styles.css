@@ -41,13 +41,7 @@ main {
     text-align: center;
 }
 
-nav {
-    background-color: #fff; /* Set background color for the navbar */
-    padding: 10px 20px; /* Adjust as needed */
-    display: inline-block;
-    justify-content: space-between; /* Distribute items horizontally */
-    align-items: center; /* Center items vertically */
-}
+
 
 /*.brand {
     display: flex;
