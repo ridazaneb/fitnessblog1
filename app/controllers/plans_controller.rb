@@ -16,7 +16,6 @@ class PlansController < ApplicationController
 
     if @plan.save
       redirect_to root_path, notice: 'Plan was successfully created.'
-      redirect_to plans_path
     else
       render :new
     end
