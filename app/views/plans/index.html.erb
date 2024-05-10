@@ -53,6 +53,7 @@
 
         <br>
         <br>
+     <% if current_user %>
         <h2 style="color: #333; padding-left: 30px; font-size:25px;">Existing Plans</h2>
         <br>
         <ul style="list-style-type: disc; color: #333; padding-left: 30px">
@@ -63,7 +64,7 @@
         </ul>
 
         <a class="btn btn-primary" style="color: #fff; background-color: #007bff; border-color: #007bff; padding-left: 30px" href="/plans/new">Add Your Own Goal</a>
-        
+        <% end %>
         <!-- Container for confetti effect -->
         <div id="confetti-container" style="position: relative; height: 300px;"></div>
     </div>
